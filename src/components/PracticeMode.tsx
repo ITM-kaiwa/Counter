@@ -60,7 +60,7 @@ const PracticeMode = () => {
               </div>
               <button 
                 onClick={() => playAudio(item.reading)}
-                className="p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-50 rounded-full"
+                className="p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-50 active:scale-90 rounded-full transition-all"
                 title="Phát âm thanh"
               >
                 <Volume2 size={20} />

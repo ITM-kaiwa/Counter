@@ -22,7 +22,7 @@ const BasicLearning = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex items-center justify-between w-full mb-6">
-        <button onClick={handlePrev} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+        <button onClick={handlePrev} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 active:scale-90 transition-transform">
           <ChevronLeft size={24} />
         </button>
         <div className="text-center">
@@ -30,23 +30,23 @@ const BasicLearning = () => {
           <h2 className="text-4xl font-bold mb-2">〜{counter.kanji}</h2>
           <p className="text-gray-600 font-medium">{counter.meaning}</p>
         </div>
-        <button onClick={handleNext} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+        <button onClick={handleNext} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 active:scale-90 transition-transform">
           <ChevronRight size={24} />
         </button>
       </div>
 
       <div className="bg-blue-50 w-full p-4 rounded-lg mb-6 shadow-sm border border-blue-100">
         <p className="text-gray-700">{counter.description}</p>
-        <div className="mt-3 text-sm text-gray-700 font-bold flex flex-wrap gap-2 items-center">
-          <span>Ví dụ:</span>
+        <div className="mt-4 flex flex-wrap gap-x-4 gap-y-3 items-end">
+          <span className="text-sm text-gray-700 font-bold mb-1">Ví dụ:</span>
           {counter.items.map((item, idx) => (
-            <span key={idx}>
-              <ruby className="text-lg">
+            <div key={idx} className="flex flex-col items-center">
+              <ruby className="text-lg font-bold text-gray-800">
                 {item.word}
-                <rt className="text-xs text-gray-500">{item.reading}</rt>
+                <rt className="text-xs text-gray-500 font-normal">{item.reading}</rt>
               </ruby>
-              {idx < counter.items.length - 1 && "、"}
-            </span>
+              <span className="text-xs text-blue-600 font-medium mt-1">{item.meaning}</span>
+            </div>
           ))}
         </div>
       </div>
@@ -57,7 +57,7 @@ const BasicLearning = () => {
             <div 
               key={item.number} 
               onClick={() => playAudio(item.reading)}
-              className={`flex justify-between items-center p-3 rounded-lg border cursor-pointer hover:border-blue-400 transition-colors ${item.isSpecial ? 'bg-pink-100 border-pink-200' : 'bg-white border-gray-200'}`}
+              className={`flex justify-between items-center p-3 rounded-lg border cursor-pointer hover:border-blue-400 active:scale-95 transition-all ${item.isSpecial ? 'bg-pink-100 border-pink-200' : 'bg-white border-gray-200'}`}
             >
               <span className="font-bold text-lg">{item.kanji}</span>
               <div className="flex items-center gap-2">
@@ -72,7 +72,7 @@ const BasicLearning = () => {
             <div 
               key={item.number} 
               onClick={() => playAudio(item.reading)}
-              className={`flex justify-between items-center p-3 rounded-lg border cursor-pointer hover:border-blue-400 transition-colors ${item.isSpecial ? 'bg-pink-100 border-pink-200' : 'bg-white border-gray-200'}`}
+              className={`flex justify-between items-center p-3 rounded-lg border cursor-pointer hover:border-blue-400 active:scale-95 transition-all ${item.isSpecial ? 'bg-pink-100 border-pink-200' : 'bg-white border-gray-200'}`}
             >
               <span className="font-bold text-lg">{item.kanji}</span>
               <div className="flex items-center gap-2">

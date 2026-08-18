@@ -130,7 +130,7 @@ const TimeAttack = () => {
               <button
                 key={idx}
                 onClick={() => handleAnswer(option)}
-                className="w-full py-4 text-2xl font-bold text-gray-800 bg-gray-100 hover:bg-blue-100 hover:text-blue-600 border-2 border-gray-200 hover:border-blue-300 rounded-xl transition-all"
+                className="w-full py-4 text-2xl font-bold text-gray-800 bg-gray-100 hover:bg-blue-100 hover:text-blue-600 border-2 border-gray-200 hover:border-blue-300 rounded-xl active:scale-95 transition-all"
               >
                 {option}
               </button>
