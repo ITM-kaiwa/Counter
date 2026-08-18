@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { countersData } from '../data/counters';
-import { Volume2 } from 'lucide-react';
 import { playAudio } from '../utils/tts';
 
 const TimeAttack = () => {
