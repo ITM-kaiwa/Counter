@@ -9,7 +9,9 @@ const TimeAttack = () => {
   
   const [currentQuestion, setCurrentQuestion] = useState<{
     number: number;
-    item: string;
+    itemWord: string;
+    itemReading: string;
+    emoji: string;
     correctReading: string;
     kanji: string;
     options: string[];
@@ -26,15 +28,10 @@ const TimeAttack = () => {
   }, [isPlaying, timeLeft]);
 
   const generateQuestion = () => {
-    // Pick a random counter category
     const counter = countersData[Math.floor(Math.random() * countersData.length)];
-    // Pick a random item from that category
-    const item = counter.items[Math.floor(Math.random() * counter.items.length)];
-    // Pick a random number 1-10
+    const itemObj = counter.items[Math.floor(Math.random() * counter.items.length)];
     const conjugation = counter.conjugations[Math.floor(Math.random() * counter.conjugations.length)];
     
-    // Generate 2 wrong options from other conjugations in the SAME or DIFFERENT counter
-    // For simplicity, let's pick random readings from anywhere
     const allReadings = countersData.flatMap(c => c.conjugations.map(cj => cj.reading));
     const wrongOptions: string[] = [];
     while (wrongOptions.length < 2) {
@@ -48,7 +45,9 @@ const TimeAttack = () => {
 
     setCurrentQuestion({
       number: conjugation.number,
-      item: item,
+      itemWord: itemObj.word,
+      itemReading: itemObj.reading,
+      emoji: counter.emoji,
       correctReading: conjugation.reading,
       kanji: conjugation.kanji,
       options: options
@@ -70,7 +69,6 @@ const TimeAttack = () => {
       playAudio(currentQuestion.correctReading);
       generateQuestion();
     } else {
-      // penalty or just new question? Let's just generate new and maybe vibrate/red flash
       generateQuestion();
     }
   };
@@ -78,15 +76,15 @@ const TimeAttack = () => {
   if (!isPlaying && timeLeft === 30) {
     return (
       <div className="flex flex-col items-center justify-center py-12">
-        <h2 className="text-3xl font-bold mb-4 text-gray-800">タイムアタックモード</h2>
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">Chế độ Thử thách Thời gian</h2>
         <p className="text-gray-600 mb-8 text-center max-w-md">
-          30秒以内に、表示されたアイテムの正しい助数詞の読み方を3つの選択肢から選んでください。
+          Trong vòng 30 giây, hãy chọn cách đọc đúng của trợ từ chỉ số lượng cho các vật thể hiển thị từ 3 lựa chọn.
         </p>
         <button 
           onClick={startGame}
           className="px-8 py-3 bg-red-500 text-white font-bold rounded-full text-xl shadow-lg hover:bg-red-600 transition-transform transform hover:scale-105"
         >
-          スタート！
+          Bắt đầu!
         </button>
       </div>
     );
@@ -95,13 +93,13 @@ const TimeAttack = () => {
   if (!isPlaying && timeLeft === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-12">
-        <h2 className="text-3xl font-bold mb-4 text-gray-800">タイムアップ！</h2>
-        <p className="text-2xl mb-8">スコア: <span className="font-bold text-red-500">{score}</span> 問正解</p>
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">Hết giờ!</h2>
+        <p className="text-2xl mb-8">Điểm: <span className="font-bold text-red-500">{score}</span> câu đúng</p>
         <button 
           onClick={startGame}
           className="px-8 py-3 bg-red-500 text-white font-bold rounded-full text-xl shadow-lg hover:bg-red-600 transition-transform transform hover:scale-105"
         >
-          もう一度プレイ
+          Chơi lại
         </button>
       </div>
     );
@@ -110,15 +108,21 @@ const TimeAttack = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex justify-between w-full mb-8 px-4">
-        <div className="text-xl font-bold text-gray-600">残り時間: <span className="text-red-500 text-2xl">{timeLeft}</span>秒</div>
-        <div className="text-xl font-bold text-gray-600">スコア: <span className="text-blue-500 text-2xl">{score}</span></div>
+        <div className="text-xl font-bold text-gray-600">Thời gian: <span className="text-red-500 text-2xl">{timeLeft}</span>s</div>
+        <div className="text-xl font-bold text-gray-600">Điểm: <span className="text-blue-500 text-2xl">{score}</span></div>
       </div>
 
       {currentQuestion && (
         <div className="flex flex-col items-center w-full max-w-md">
-          <div className="text-6xl mb-6 flex items-baseline gap-4">
+          <div className="text-6xl mb-6 flex items-center justify-center gap-4">
             <span className="font-bold text-gray-800">{currentQuestion.number}</span>
-            <span className="text-4xl text-gray-600">{currentQuestion.item}</span>
+            <span className="text-4xl text-gray-600">
+              <ruby>
+                {currentQuestion.itemWord}
+                <rt className="text-xl">{currentQuestion.itemReading}</rt>
+              </ruby>
+            </span>
+            <span className="text-5xl">{currentQuestion.emoji}</span>
           </div>
           
           <div className="grid grid-cols-1 gap-4 w-full">

@@ -15,19 +15,19 @@ function App() {
             className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'basic' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
             onClick={() => setMode('basic')}
           >
-            基本学習
+            Học cơ bản
           </button>
           <button 
             className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'practice' ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
             onClick={() => setMode('practice')}
           >
-            練習モード
+            Luyện tập
           </button>
           <button 
             className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'timeAttack' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
             onClick={() => setMode('timeAttack')}
           >
-            タイムアタック
+            Thử thách thời gian
           </button>
         </div>
       </header>

@@ -26,6 +26,7 @@ const BasicLearning = () => {
           <ChevronLeft size={24} />
         </button>
         <div className="text-center">
+          <div className="text-6xl mb-2">{counter.emoji}</div>
           <h2 className="text-4xl font-bold mb-2">〜{counter.kanji}</h2>
           <p className="text-gray-600 font-medium">{counter.meaning}</p>
         </div>
@@ -36,7 +37,18 @@ const BasicLearning = () => {
 
       <div className="bg-blue-50 w-full p-4 rounded-lg mb-6 shadow-sm border border-blue-100">
         <p className="text-gray-700">{counter.description}</p>
-        <p className="mt-2 text-sm text-gray-500 font-bold">例: {counter.items.join('、')}</p>
+        <div className="mt-3 text-sm text-gray-700 font-bold flex flex-wrap gap-2 items-center">
+          <span>Ví dụ:</span>
+          {counter.items.map((item, idx) => (
+            <span key={idx}>
+              <ruby className="text-lg">
+                {item.word}
+                <rt className="text-xs text-gray-500">{item.reading}</rt>
+              </ruby>
+              {idx < counter.items.length - 1 && "、"}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="flex w-full gap-4">

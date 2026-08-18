@@ -5,12 +5,18 @@ export interface Conjugation {
   isSpecial: boolean;
 }
 
+export interface Item {
+  word: string;
+  reading: string;
+}
+
 export interface CounterInfo {
   id: string;
   kanji: string;
+  emoji: string;
   meaning: string;
   description: string;
-  items: string[];
+  items: Item[];
   conjugations: Conjugation[];
 }
 
@@ -18,9 +24,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "hon",
     kanji: "本",
-    meaning: "Thin and long things",
-    description: "長いもの、細長いものを数える時に使います。（例：ペン、傘、バナナ、木など）",
-    items: ["ペン", "傘", "バナナ", "木", "鉛筆"],
+    emoji: "✏️",
+    meaning: "Vật thon dài",
+    description: "Dùng để đếm các vật dài và thon. (Ví dụ: bút, ô/dù, chuối, cây cối, v.v.)",
+    items: [
+      { word: "ペン", reading: "ぺん" },
+      { word: "傘", reading: "かさ" },
+      { word: "バナナ", reading: "ばなな" },
+      { word: "木", reading: "き" },
+      { word: "鉛筆", reading: "えんぴつ" }
+    ],
     conjugations: [
       { number: 1, kanji: "1本", reading: "いっぽん", isSpecial: true },
       { number: 2, kanji: "2本", reading: "にほん", isSpecial: false },
@@ -37,9 +50,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "ko",
     kanji: "個",
-    meaning: "Small things",
-    description: "小さくて丸いものや、特定の形を持たないものを数える時に使います。（例：りんご、卵、石など）",
-    items: ["りんご", "卵", "石", "消しゴム", "みかん"],
+    emoji: "🍎",
+    meaning: "Vật nhỏ",
+    description: "Dùng để đếm những vật nhỏ, tròn hoặc không có hình dạng cụ thể. (Ví dụ: quả táo, quả trứng, hòn đá, v.v.)",
+    items: [
+      { word: "りんご", reading: "りんご" },
+      { word: "卵", reading: "たまご" },
+      { word: "石", reading: "いし" },
+      { word: "消しゴム", reading: "けしごむ" },
+      { word: "みかん", reading: "みかん" }
+    ],
     conjugations: [
       { number: 1, kanji: "1個", reading: "いっこ", isSpecial: true },
       { number: 2, kanji: "2個", reading: "にこ", isSpecial: false },
@@ -56,9 +76,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "hiki",
     kanji: "匹",
-    meaning: "Small animals, fish and insects",
-    description: "小さな動物、魚、虫などを数える時に使います。（例：犬、猫、魚、虫など）",
-    items: ["犬", "猫", "魚", "虫", "ネズミ"],
+    emoji: "🐶",
+    meaning: "Động vật nhỏ, cá, côn trùng",
+    description: "Dùng để đếm các loài động vật nhỏ, cá, côn trùng. (Ví dụ: chó, mèo, cá, côn trùng, v.v.)",
+    items: [
+      { word: "犬", reading: "いぬ" },
+      { word: "猫", reading: "ねこ" },
+      { word: "魚", reading: "さかな" },
+      { word: "虫", reading: "むし" },
+      { word: "ネズミ", reading: "ねずみ" }
+    ],
     conjugations: [
       { number: 1, kanji: "1匹", reading: "いっぴき", isSpecial: true },
       { number: 2, kanji: "2匹", reading: "にひき", isSpecial: false },
@@ -75,9 +102,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "mai",
     kanji: "枚",
-    meaning: "Thin and flat things",
-    description: "薄くて平らなものを数える時に使います。（例：紙、シャツ、お皿など）",
-    items: ["紙", "シャツ", "お皿", "切手", "チケット"],
+    emoji: "📄",
+    meaning: "Vật mỏng và phẳng",
+    description: "Dùng để đếm các vật mỏng và phẳng. (Ví dụ: giấy, áo sơ mi, đĩa, v.v.)",
+    items: [
+      { word: "紙", reading: "かみ" },
+      { word: "シャツ", reading: "しゃつ" },
+      { word: "お皿", reading: "おさら" },
+      { word: "切手", reading: "きって" },
+      { word: "チケット", reading: "ちけっと" }
+    ],
     conjugations: [
       { number: 1, kanji: "1枚", reading: "いちまい", isSpecial: false },
       { number: 2, kanji: "2枚", reading: "にまい", isSpecial: false },
@@ -94,9 +128,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "nin",
     kanji: "人",
-    meaning: "Persons",
-    description: "人を数える時に使います。",
-    items: ["男の人", "女の人", "子供", "学生", "先生"],
+    emoji: "🧑",
+    meaning: "Người",
+    description: "Dùng để đếm người.",
+    items: [
+      { word: "男の人", reading: "おとこのひと" },
+      { word: "女の人", reading: "おんなのひと" },
+      { word: "子供", reading: "こども" },
+      { word: "学生", reading: "がくせい" },
+      { word: "先生", reading: "せんせい" }
+    ],
     conjugations: [
       { number: 1, kanji: "1人", reading: "ひとり", isSpecial: true },
       { number: 2, kanji: "2人", reading: "ふたり", isSpecial: true },
@@ -113,9 +154,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "dai",
     kanji: "台",
-    meaning: "Machines and vehicles",
-    description: "機械や乗り物を数える時に使います。（例：車、自転車、テレビなど）",
-    items: ["車", "自転車", "テレビ", "パソコン", "カメラ"],
+    emoji: "🚗",
+    meaning: "Máy móc và xe cộ",
+    description: "Dùng để đếm máy móc hoặc phương tiện giao thông. (Ví dụ: ô tô, xe đạp, tivi, v.v.)",
+    items: [
+      { word: "車", reading: "くるま" },
+      { word: "自転車", reading: "じてんしゃ" },
+      { word: "テレビ", reading: "てれび" },
+      { word: "パソコン", reading: "ぱそこん" },
+      { word: "カメラ", reading: "かめら" }
+    ],
     conjugations: [
       { number: 1, kanji: "1台", reading: "いちだい", isSpecial: false },
       { number: 2, kanji: "2台", reading: "にだい", isSpecial: false },
@@ -132,9 +180,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "hai",
     kanji: "杯",
-    meaning: "Drinks in cups and glasses",
-    description: "コップやグラスに入った飲み物を数える時に使います。",
-    items: ["水", "コーヒー", "お茶", "ジュース", "ビール"],
+    emoji: "☕",
+    meaning: "Đồ uống trong cốc, ly",
+    description: "Dùng để đếm đồ uống được đựng trong cốc hoặc ly.",
+    items: [
+      { word: "水", reading: "みず" },
+      { word: "コーヒー", reading: "こーひー" },
+      { word: "お茶", reading: "おちゃ" },
+      { word: "ジュース", reading: "じゅーす" },
+      { word: "ビール", reading: "びーる" }
+    ],
     conjugations: [
       { number: 1, kanji: "1杯", reading: "いっぱい", isSpecial: true },
       { number: 2, kanji: "2杯", reading: "にはい", isSpecial: false },
@@ -151,9 +206,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "kai",
     kanji: "回",
-    meaning: "Frequency",
-    description: "回数や頻度を数える時に使います。",
-    items: ["旅行", "食事", "練習", "シャワー", "電話"],
+    emoji: "🔄",
+    meaning: "Số lần, tần suất",
+    description: "Dùng để đếm số lần hoặc tần suất.",
+    items: [
+      { word: "旅行", reading: "りょこう" },
+      { word: "食事", reading: "しょくじ" },
+      { word: "練習", reading: "れんしゅう" },
+      { word: "シャワー", reading: "しゃわー" },
+      { word: "電話", reading: "でんわ" }
+    ],
     conjugations: [
       { number: 1, kanji: "1回", reading: "いっかい", isSpecial: true },
       { number: 2, kanji: "2回", reading: "にかい", isSpecial: false },
@@ -170,9 +232,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "satsu",
     kanji: "冊",
-    meaning: "Books and notebooks",
-    description: "本やノートなどの綴じられた紙を数える時に使います。",
-    items: ["本", "ノート", "雑誌", "辞書", "教科書"],
+    emoji: "📚",
+    meaning: "Sách và vở",
+    description: "Dùng để đếm sách, vở và các loại giấy được đóng thành cuốn.",
+    items: [
+      { word: "本", reading: "ほん" },
+      { word: "ノート", reading: "のーと" },
+      { word: "雑誌", reading: "ざっし" },
+      { word: "辞書", reading: "じしょ" },
+      { word: "教科書", reading: "きょうかしょ" }
+    ],
     conjugations: [
       { number: 1, kanji: "1冊", reading: "いっさつ", isSpecial: true },
       { number: 2, kanji: "2冊", reading: "にさつ", isSpecial: false },
@@ -189,9 +258,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "chaku",
     kanji: "着",
-    meaning: "Clothes",
-    description: "服や衣服を数える時に使います。",
-    items: ["シャツ", "コート", "スーツ", "ドレス", "制服"],
+    emoji: "👕",
+    meaning: "Quần áo",
+    description: "Dùng để đếm quần áo, trang phục.",
+    items: [
+      { word: "シャツ", reading: "しゃつ" },
+      { word: "コート", reading: "こーート" },
+      { word: "スーツ", reading: "すーつ" },
+      { word: "ドレス", reading: "どれす" },
+      { word: "制服", reading: "せいふく" }
+    ],
     conjugations: [
       { number: 1, kanji: "1着", reading: "いっちゃく", isSpecial: true },
       { number: 2, kanji: "2着", reading: "にちゃく", isSpecial: false },
@@ -208,9 +284,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "soku",
     kanji: "足",
-    meaning: "Shoes and socks",
-    description: "靴や靴下など、足に履くものを数える時に使います。（左右ペアで1足）",
-    items: ["靴", "靴下", "スリッパ", "ブーツ", "サンダル"],
+    emoji: "👟",
+    meaning: "Giày và tất",
+    description: "Dùng để đếm những thứ mang ở chân. (Một đôi tính là 1 足)",
+    items: [
+      { word: "靴", reading: "くつ" },
+      { word: "靴下", reading: "くつした" },
+      { word: "スリッパ", reading: "すりっぱ" },
+      { word: "ブーツ", reading: "ぶーつ" },
+      { word: "サンダル", reading: "さんだる" }
+    ],
     conjugations: [
       { number: 1, kanji: "1足", reading: "いっそく", isSpecial: true },
       { number: 2, kanji: "2足", reading: "にそく", isSpecial: false },
@@ -227,9 +310,16 @@ export const countersData: CounterInfo[] = [
   {
     id: "ken",
     kanji: "軒",
-    meaning: "Houses",
-    description: "家や建物を数える時に使います。",
-    items: ["家", "店", "レストラン", "スーパー", "本屋"],
+    emoji: "🏠",
+    meaning: "Ngôi nhà",
+    description: "Dùng để đếm nhà cửa hoặc các tòa nhà.",
+    items: [
+      { word: "家", reading: "いえ" },
+      { word: "店", reading: "みせ" },
+      { word: "レストラン", reading: "れすとらん" },
+      { word: "スーパー", reading: "すーぱー" },
+      { word: "本屋", reading: "ほんや" }
+    ],
     conjugations: [
       { number: 1, kanji: "1軒", reading: "いっけん", isSpecial: true },
       { number: 2, kanji: "2軒", reading: "にけん", isSpecial: false },

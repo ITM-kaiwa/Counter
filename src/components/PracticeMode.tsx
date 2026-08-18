@@ -30,8 +30,9 @@ const PracticeMode = () => {
           <ChevronLeft size={24} />
         </button>
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-2">練習：〜{counter.kanji}</h2>
-          <p className="text-gray-500">ひらがなで読み方を入力してください</p>
+          <div className="text-4xl mb-2">{counter.emoji}</div>
+          <h2 className="text-3xl font-bold mb-2">Luyện tập: 〜{counter.kanji}</h2>
+          <p className="text-gray-500">Hãy nhập cách đọc bằng Hiragana</p>
         </div>
         <button onClick={handleNext} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
           <ChevronRight size={24} />
@@ -50,7 +51,7 @@ const PracticeMode = () => {
                 type="text"
                 value={inputs[item.number] || ''}
                 onChange={(e) => handleChange(item.number, e.target.value)}
-                placeholder="よみかた"
+                placeholder="cách đọc"
                 className={`flex-1 p-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-400 ${hasInput ? (isCorrect ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300') : ''}`}
               />
               <div className="w-8 flex justify-center">
@@ -60,7 +61,7 @@ const PracticeMode = () => {
               <button 
                 onClick={() => playAudio(item.reading)}
                 className="p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-50 rounded-full"
-                title="音声を再生"
+                title="Phát âm thanh"
               >
                 <Volume2 size={20} />
               </button>
