@@ -8,12 +8,13 @@ export interface Conjugation {
 export interface Item {
   word: string;
   reading: string;
+  emoji: string;
+  meaning: string;
 }
 
 export interface CounterInfo {
   id: string;
   kanji: string;
-  emoji: string;
   meaning: string;
   description: string;
   items: Item[];
@@ -24,15 +25,14 @@ export const countersData: CounterInfo[] = [
   {
     id: "hon",
     kanji: "本",
-    emoji: "✏️",
     meaning: "Vật thon dài",
     description: "Dùng để đếm các vật dài và thon. (Ví dụ: bút, ô/dù, chuối, cây cối, v.v.)",
     items: [
-      { word: "ペン", reading: "ぺん" },
-      { word: "傘", reading: "かさ" },
-      { word: "バナナ", reading: "ばなな" },
-      { word: "木", reading: "き" },
-      { word: "鉛筆", reading: "えんぴつ" }
+      { word: "ペン", reading: "ぺん", emoji: "❓", meaning: "" },
+      { word: "傘", reading: "かさ", emoji: "❓", meaning: "" },
+      { word: "バナナ", reading: "ばなな", emoji: "❓", meaning: "" },
+      { word: "木", reading: "き", emoji: "❓", meaning: "" },
+      { word: "鉛筆", reading: "えんぴつ", emoji: "❓", meaning: "" }
     ],
     conjugations: [
       { number: 1, kanji: "1本", reading: "いっぽん", isSpecial: true },
@@ -54,11 +54,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Vật nhỏ",
     description: "Dùng để đếm những vật nhỏ, tròn hoặc không có hình dạng cụ thể. (Ví dụ: quả táo, quả trứng, hòn đá, v.v.)",
     items: [
-      { word: "りんご", reading: "りんご" },
-      { word: "卵", reading: "たまご" },
-      { word: "石", reading: "いし" },
-      { word: "消しゴム", reading: "けしごむ" },
-      { word: "みかん", reading: "みかん" }
+      { word: "りんご", reading: "りんご", emoji: "🍎", meaning: "táo" },
+      { word: "卵", reading: "たまご", emoji: "🥚", meaning: "trứng" },
+      { word: "石", reading: "いし", emoji: "🪨", meaning: "đá" },
+      { word: "消しゴム", reading: "けしごむ", emoji: "🧽", meaning: "cục tẩy" },
+      { word: "みかん", reading: "みかん", emoji: "🍊", meaning: "quýt" }
     ],
     conjugations: [
       { number: 1, kanji: "1個", reading: "いっこ", isSpecial: true },
@@ -80,11 +80,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Động vật nhỏ, cá, côn trùng",
     description: "Dùng để đếm các loài động vật nhỏ, cá, côn trùng. (Ví dụ: chó, mèo, cá, côn trùng, v.v.)",
     items: [
-      { word: "犬", reading: "いぬ" },
-      { word: "猫", reading: "ねこ" },
-      { word: "魚", reading: "さかな" },
-      { word: "虫", reading: "むし" },
-      { word: "ネズミ", reading: "ねずみ" }
+      { word: "犬", reading: "いぬ", emoji: "🐶", meaning: "chó" },
+      { word: "猫", reading: "ねこ", emoji: "🐱", meaning: "mèo" },
+      { word: "魚", reading: "さかな", emoji: "🐟", meaning: "cá" },
+      { word: "虫", reading: "むし", emoji: "🐛", meaning: "côn trùng" },
+      { word: "ネズミ", reading: "ねずみ", emoji: "🐭", meaning: "chuột" }
     ],
     conjugations: [
       { number: 1, kanji: "1匹", reading: "いっぴき", isSpecial: true },
@@ -106,11 +106,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Vật mỏng và phẳng",
     description: "Dùng để đếm các vật mỏng và phẳng. (Ví dụ: giấy, áo sơ mi, đĩa, v.v.)",
     items: [
-      { word: "紙", reading: "かみ" },
-      { word: "シャツ", reading: "しゃつ" },
-      { word: "お皿", reading: "おさら" },
-      { word: "切手", reading: "きって" },
-      { word: "チケット", reading: "ちけっと" }
+      { word: "紙", reading: "かみ", emoji: "📄", meaning: "giấy" },
+      { word: "シャツ", reading: "しゃつ", emoji: "👕", meaning: "áo sơ mi" },
+      { word: "お皿", reading: "おさら", emoji: "🍽️", meaning: "đĩa" },
+      { word: "切手", reading: "きって", emoji: "📮", meaning: "tem" },
+      { word: "チケット", reading: "ちけっと", emoji: "🎫", meaning: "vé" }
     ],
     conjugations: [
       { number: 1, kanji: "1枚", reading: "いちまい", isSpecial: false },
@@ -132,11 +132,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Người",
     description: "Dùng để đếm người.",
     items: [
-      { word: "男の人", reading: "おとこのひと" },
-      { word: "女の人", reading: "おんなのひと" },
-      { word: "子供", reading: "こども" },
-      { word: "学生", reading: "がくせい" },
-      { word: "先生", reading: "せんせい" }
+      { word: "男の人", reading: "おとこのひと", emoji: "👨", meaning: "đàn ông" },
+      { word: "女の人", reading: "おんなのひと", emoji: "👩", meaning: "phụ nữ" },
+      { word: "子供", reading: "こども", emoji: "👦", meaning: "trẻ em" },
+      { word: "学生", reading: "がくせい", emoji: "🎓", meaning: "học sinh" },
+      { word: "先生", reading: "せんせい", emoji: "👨‍🏫", meaning: "giáo viên" }
     ],
     conjugations: [
       { number: 1, kanji: "1人", reading: "ひとり", isSpecial: true },
@@ -158,11 +158,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Máy móc và xe cộ",
     description: "Dùng để đếm máy móc hoặc phương tiện giao thông. (Ví dụ: ô tô, xe đạp, tivi, v.v.)",
     items: [
-      { word: "車", reading: "くるま" },
-      { word: "自転車", reading: "じてんしゃ" },
-      { word: "テレビ", reading: "てれび" },
-      { word: "パソコン", reading: "ぱそこん" },
-      { word: "カメラ", reading: "かめら" }
+      { word: "車", reading: "くるま", emoji: "🚗", meaning: "ô tô" },
+      { word: "自転車", reading: "じてんしゃ", emoji: "🚲", meaning: "xe đạp" },
+      { word: "テレビ", reading: "てれび", emoji: "📺", meaning: "tivi" },
+      { word: "パソコン", reading: "ぱそこん", emoji: "💻", meaning: "máy tính" },
+      { word: "カメラ", reading: "かめら", emoji: "📷", meaning: "máy ảnh" }
     ],
     conjugations: [
       { number: 1, kanji: "1台", reading: "いちだい", isSpecial: false },
@@ -184,11 +184,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Đồ uống trong cốc, ly",
     description: "Dùng để đếm đồ uống được đựng trong cốc hoặc ly.",
     items: [
-      { word: "水", reading: "みず" },
-      { word: "コーヒー", reading: "こーひー" },
-      { word: "お茶", reading: "おちゃ" },
-      { word: "ジュース", reading: "じゅーす" },
-      { word: "ビール", reading: "びーる" }
+      { word: "水", reading: "みず", emoji: "💧", meaning: "nước" },
+      { word: "コーヒー", reading: "こーひー", emoji: "☕", meaning: "cà phê" },
+      { word: "お茶", reading: "おちゃ", emoji: "🍵", meaning: "trà" },
+      { word: "ジュース", reading: "じゅーす", emoji: "🧃", meaning: "nước ép" },
+      { word: "ビール", reading: "びーる", emoji: "🍺", meaning: "bia" }
     ],
     conjugations: [
       { number: 1, kanji: "1杯", reading: "いっぱい", isSpecial: true },
@@ -210,11 +210,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Số lần, tần suất",
     description: "Dùng để đếm số lần hoặc tần suất.",
     items: [
-      { word: "旅行", reading: "りょこう" },
-      { word: "食事", reading: "しょくじ" },
-      { word: "練習", reading: "れんしゅう" },
-      { word: "シャワー", reading: "しゃわー" },
-      { word: "電話", reading: "でんわ" }
+      { word: "旅行", reading: "りょこう", emoji: "🧳", meaning: "du lịch" },
+      { word: "食事", reading: "しょくじ", emoji: "🍽️", meaning: "bữa ăn" },
+      { word: "練習", reading: "れんしゅう", emoji: "🏋️", meaning: "luyện tập" },
+      { word: "シャワー", reading: "しゃわー", emoji: "🚿", meaning: "tắm vòi sen" },
+      { word: "電話", reading: "でんわ", emoji: "📞", meaning: "điện thoại" }
     ],
     conjugations: [
       { number: 1, kanji: "1回", reading: "いっかい", isSpecial: true },
@@ -236,11 +236,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Sách và vở",
     description: "Dùng để đếm sách, vở và các loại giấy được đóng thành cuốn.",
     items: [
-      { word: "本", reading: "ほん" },
-      { word: "ノート", reading: "のーと" },
-      { word: "雑誌", reading: "ざっし" },
-      { word: "辞書", reading: "じしょ" },
-      { word: "教科書", reading: "きょうかしょ" }
+      { word: "本", reading: "ほん", emoji: "📖", meaning: "sách" },
+      { word: "ノート", reading: "のーと", emoji: "📓", meaning: "vở" },
+      { word: "雑誌", reading: "ざっし", emoji: "📰", meaning: "tạp chí" },
+      { word: "辞書", reading: "じしょ", emoji: "📕", meaning: "từ điển" },
+      { word: "教科書", reading: "きょうかしょ", emoji: "📘", meaning: "sách giáo khoa" }
     ],
     conjugations: [
       { number: 1, kanji: "1冊", reading: "いっさつ", isSpecial: true },
@@ -262,11 +262,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Quần áo",
     description: "Dùng để đếm quần áo, trang phục.",
     items: [
-      { word: "シャツ", reading: "しゃつ" },
-      { word: "コート", reading: "こーート" },
-      { word: "スーツ", reading: "すーつ" },
-      { word: "ドレス", reading: "どれす" },
-      { word: "制服", reading: "せいふく" }
+      { word: "シャツ", reading: "しゃつ", emoji: "👕", meaning: "áo sơ mi" },
+      { word: "コート", reading: "こーート", emoji: "🧥", meaning: "áo khoác" },
+      { word: "スーツ", reading: "すーつ", emoji: "👔", meaning: "com lê" },
+      { word: "ドレス", reading: "どれす", emoji: "👗", meaning: "váy" },
+      { word: "制服", reading: "せいふく", emoji: "🏫", meaning: "đồng phục" }
     ],
     conjugations: [
       { number: 1, kanji: "1着", reading: "いっちゃく", isSpecial: true },
@@ -288,11 +288,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Giày và tất",
     description: "Dùng để đếm những thứ mang ở chân. (Một đôi tính là 1 足)",
     items: [
-      { word: "靴", reading: "くつ" },
-      { word: "靴下", reading: "くつした" },
-      { word: "スリッパ", reading: "すりっぱ" },
-      { word: "ブーツ", reading: "ぶーつ" },
-      { word: "サンダル", reading: "さんだる" }
+      { word: "靴", reading: "くつ", emoji: "👞", meaning: "giày" },
+      { word: "靴下", reading: "くつした", emoji: "🧦", meaning: "tất" },
+      { word: "スリッパ", reading: "すりっぱ", emoji: "🩴", meaning: "dép trong nhà" },
+      { word: "ブーツ", reading: "ぶーつ", emoji: "👢", meaning: "ủng" },
+      { word: "サンダル", reading: "さんだる", emoji: "👡", meaning: "dép xăng đan" }
     ],
     conjugations: [
       { number: 1, kanji: "1足", reading: "いっそく", isSpecial: true },
@@ -314,11 +314,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Ngôi nhà",
     description: "Dùng để đếm nhà cửa hoặc các tòa nhà.",
     items: [
-      { word: "家", reading: "いえ" },
-      { word: "店", reading: "みせ" },
-      { word: "レストラン", reading: "れすとらん" },
-      { word: "スーパー", reading: "すーぱー" },
-      { word: "本屋", reading: "ほんや" }
+      { word: "家", reading: "いえ", emoji: "🏠", meaning: "nhà" },
+      { word: "店", reading: "みせ", emoji: "🏪", meaning: "cửa hàng" },
+      { word: "レストラン", reading: "れすとらん", emoji: "🍴", meaning: "nhà hàng" },
+      { word: "スーパー", reading: "すーぱー", emoji: "🛒", meaning: "siêu thị" },
+      { word: "本屋", reading: "ほんや", emoji: "📚", meaning: "hiệu sách" }
     ],
     conjugations: [
       { number: 1, kanji: "1軒", reading: "いっけん", isSpecial: true },
