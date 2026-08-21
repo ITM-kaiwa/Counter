@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'lucide-react'
 import BasicLearning from './components/BasicLearning'
 import PracticeMode from './components/PracticeMode'
 import TimeAttack from './components/TimeAttack'
@@ -8,7 +9,16 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      <header className="w-full max-w-4xl bg-white rounded-xl shadow-md p-4 mb-6 text-center">
+      <header className="w-full max-w-4xl bg-white rounded-xl shadow-md p-4 mb-6 relative text-center">
+        <a 
+          href="https://itm-kaiwa.github.io/Random/index.html" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="absolute top-4 right-4 p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-50 active:scale-95 rounded-full transition-all flex items-center justify-center"
+          title="数字練習アプリへ"
+        >
+          <Link size={24} />
+        </a>
         <h1 className="text-3xl font-bold text-gray-800 mb-4">助数詞学習アプリ</h1>
         <div className="flex justify-center gap-4">
           <button 
