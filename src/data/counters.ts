@@ -15,6 +15,7 @@ export interface Item {
 export interface CounterInfo {
   id: string;
   kanji: string;
+  emoji: string;
   meaning: string;
   description: string;
   items: Item[];
@@ -25,6 +26,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "hon",
     kanji: "本",
+    emoji: "✏️",
     meaning: "Vật thon dài",
     description: "Dùng để đếm các vật dài và thon. (Ví dụ: bút, ô/dù, chuối, cây cối, v.v.)",
     items: [
