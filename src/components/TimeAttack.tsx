@@ -116,6 +116,7 @@ const TimeAttack = () => {
         <div className="flex flex-col items-center w-full max-w-md">
           <div className="text-6xl mb-6 flex items-center justify-center gap-4">
             <span className="font-bold text-slate-800">{currentQuestion.number}</span>
+            <span className="text-4xl text-slate-400">×</span>
             <span className="text-4xl text-slate-600">
               <ruby>
                 {currentQuestion.itemWord}
