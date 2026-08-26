@@ -30,11 +30,11 @@ export const countersData: CounterInfo[] = [
     meaning: "Vật thon dài",
     description: "Dùng để đếm các vật dài và thon. (Ví dụ: bút, ô/dù, chuối, cây cối, v.v.)",
     items: [
-      { word: "ペン", reading: "ぺん", emoji: "❓", meaning: "" },
-      { word: "傘", reading: "かさ", emoji: "❓", meaning: "" },
-      { word: "バナナ", reading: "ばなな", emoji: "❓", meaning: "" },
-      { word: "木", reading: "き", emoji: "❓", meaning: "" },
-      { word: "鉛筆", reading: "えんぴつ", emoji: "❓", meaning: "" }
+      { word: "ペン", reading: "ぺん", emoji: "🖊️", meaning: "bút" },
+      { word: "傘", reading: "かさ", emoji: "☂️", meaning: "ô/dù" },
+      { word: "バナナ", reading: "ばなな", emoji: "🍌", meaning: "chuối" },
+      { word: "木", reading: "き", emoji: "🌳", meaning: "cây" },
+      { word: "鉛筆", reading: "えんぴつ", emoji: "✏️", meaning: "bút chì" }
     ],
     conjugations: [
       { number: 1, kanji: "1本", reading: "いっぽん", isSpecial: true },
