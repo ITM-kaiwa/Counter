@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'lucide-react'
+import { Link, Download } from 'lucide-react'
 import BasicLearning from './components/BasicLearning'
 import PracticeMode from './components/PracticeMode'
 import TimeAttack from './components/TimeAttack'
@@ -39,6 +39,15 @@ function App() {
           >
             Thử thách thời gian
           </button>
+          <a
+            href="/josuushi-hayamihyou.pdf"
+            download="josuushi-hayamihyou.pdf"
+            className="px-4 py-2 rounded-lg font-bold transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 flex items-center gap-1.5"
+            title="助数詞早見表(PDF)をダウンロード"
+          >
+            <Download size={18} />
+            資料
+          </a>
         </div>
       </header>
 
