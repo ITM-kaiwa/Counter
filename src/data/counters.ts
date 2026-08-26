@@ -111,7 +111,7 @@ export const countersData: CounterInfo[] = [
       { word: "紙", reading: "かみ", emoji: "📄", meaning: "giấy" },
       { word: "シャツ", reading: "しゃつ", emoji: "👕", meaning: "áo sơ mi" },
       { word: "お皿", reading: "おさら", emoji: "🍽️", meaning: "đĩa" },
-      { word: "切手", reading: "きって", emoji: "📮", meaning: "tem" },
+      { word: "切手", reading: "きって", emoji: "🎟️", meaning: "tem" },
       { word: "チケット", reading: "ちけっと", emoji: "🎫", meaning: "vé" }
     ],
     conjugations: [
@@ -268,7 +268,7 @@ export const countersData: CounterInfo[] = [
       { word: "コート", reading: "こーート", emoji: "🧥", meaning: "áo khoác" },
       { word: "スーツ", reading: "すーつ", emoji: "👔", meaning: "com lê" },
       { word: "ドレス", reading: "どれす", emoji: "👗", meaning: "váy" },
-      { word: "制服", reading: "せいふく", emoji: "🏫", meaning: "đồng phục" }
+      { word: "制服", reading: "せいふく", emoji: "🎽", meaning: "đồng phục" }
     ],
     conjugations: [
       { number: 1, kanji: "1着", reading: "いっちゃく", isSpecial: true },
@@ -319,8 +319,8 @@ export const countersData: CounterInfo[] = [
       { word: "家", reading: "いえ", emoji: "🏠", meaning: "nhà" },
       { word: "店", reading: "みせ", emoji: "🏪", meaning: "cửa hàng" },
       { word: "レストラン", reading: "れすとらん", emoji: "🍴", meaning: "nhà hàng" },
-      { word: "スーパー", reading: "すーぱー", emoji: "🛒", meaning: "siêu thị" },
-      { word: "本屋", reading: "ほんや", emoji: "📚", meaning: "hiệu sách" }
+      { word: "スーパー", reading: "すーぱー", emoji: "🏬", meaning: "siêu thị" },
+      { word: "本屋", reading: "ほんや", emoji: "🏢", meaning: "hiệu sách" }
     ],
     conjugations: [
       { number: 1, kanji: "1軒", reading: "いっけん", isSpecial: true },
