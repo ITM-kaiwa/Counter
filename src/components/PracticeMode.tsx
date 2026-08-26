@@ -6,7 +6,7 @@ import { playAudio } from '../utils/tts';
 const PracticeMode = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const counter = countersData[currentIndex];
-  
+
   const [inputs, setInputs] = useState<Record<number, string>>({});
 
   const handlePrev = () => {
@@ -26,15 +26,15 @@ const PracticeMode = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex items-center justify-between w-full mb-6">
-        <button onClick={handlePrev} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+        <button onClick={handlePrev} className="p-2 bg-slate-100 rounded-full hover:bg-slate-200">
           <ChevronLeft size={24} />
         </button>
         <div className="text-center">
           <div className="text-4xl mb-2">{counter.emoji}</div>
           <h2 className="text-3xl font-bold mb-2">Luyện tập: 〜{counter.kanji}</h2>
-          <p className="text-gray-500">Hãy nhập cách đọc bằng Hiragana</p>
+          <p className="text-slate-500">Hãy nhập cách đọc bằng Hiragana</p>
         </div>
-        <button onClick={handleNext} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+        <button onClick={handleNext} className="p-2 bg-slate-100 rounded-full hover:bg-slate-200">
           <ChevronRight size={24} />
         </button>
       </div>
@@ -43,24 +43,24 @@ const PracticeMode = () => {
         {counter.conjugations.map((item) => {
           const isCorrect = inputs[item.number] === item.reading;
           const hasInput = (inputs[item.number] || '').length > 0;
-          
+
           return (
-            <div key={item.number} className="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-lg shadow-sm">
+            <div key={item.number} className="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg shadow-sm">
               <span className="font-bold text-xl w-12">{item.number}{counter.kanji}</span>
               <input
                 type="text"
                 value={inputs[item.number] || ''}
                 onChange={(e) => handleChange(item.number, e.target.value)}
                 placeholder="cách đọc"
-                className={`flex-1 p-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-400 ${hasInput ? (isCorrect ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300') : ''}`}
+                className={`flex-1 p-2 border rounded-md outline-none focus:ring-2 focus:ring-purple-400 ${hasInput ? (isCorrect ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300') : ''}`}
               />
               <div className="w-8 flex justify-center">
                 {hasInput && isCorrect && <Check className="text-green-500" size={24} />}
                 {hasInput && !isCorrect && <X className="text-red-500" size={24} />}
               </div>
-              <button 
+              <button
                 onClick={() => playAudio(item.reading)}
-                className="p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-50 active:scale-90 rounded-full transition-all"
+                className="p-2 text-slate-400 hover:text-purple-500 hover:bg-purple-50 active:scale-90 rounded-full transition-all"
                 title="Phát âm thanh"
               >
                 <Volume2 size={20} />

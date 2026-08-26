@@ -22,30 +22,30 @@ const BasicLearning = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex items-center justify-between w-full mb-6">
-        <button onClick={handlePrev} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 active:scale-90 transition-transform">
+        <button onClick={handlePrev} className="p-2 bg-slate-100 rounded-full hover:bg-slate-200 active:scale-90 transition-transform">
           <ChevronLeft size={24} />
         </button>
         <div className="text-center">
           <div className="text-6xl mb-2">{counter.emoji}</div>
           <h2 className="text-4xl font-bold mb-2">〜{counter.kanji}</h2>
-          <p className="text-gray-600 font-medium">{counter.meaning}</p>
+          <p className="text-slate-600 font-medium">{counter.meaning}</p>
         </div>
-        <button onClick={handleNext} className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 active:scale-90 transition-transform">
+        <button onClick={handleNext} className="p-2 bg-slate-100 rounded-full hover:bg-slate-200 active:scale-90 transition-transform">
           <ChevronRight size={24} />
         </button>
       </div>
 
-      <div className="bg-blue-50 w-full p-4 rounded-lg mb-6 shadow-sm border border-blue-100">
-        <p className="text-gray-700">{counter.description}</p>
+      <div className="bg-purple-50 w-full p-4 rounded-lg mb-6 shadow-sm border border-purple-100">
+        <p className="text-slate-700">{counter.description}</p>
         <div className="mt-4 flex flex-wrap gap-x-4 gap-y-3 items-end">
-          <span className="text-sm text-gray-700 font-bold mb-1">Ví dụ:</span>
+          <span className="text-sm text-slate-700 font-bold mb-1">Ví dụ:</span>
           {counter.items.map((item, idx) => (
             <div key={idx} className="flex flex-col items-center">
-              <ruby className="text-lg font-bold text-gray-800">
+              <ruby className="text-lg font-bold text-slate-800">
                 {item.word}
-                <rt className="text-xs text-gray-500 font-normal">{item.reading}</rt>
+                <rt className="text-xs text-slate-500 font-normal">{item.reading}</rt>
               </ruby>
-              <span className="text-xs text-blue-600 font-medium mt-1">{item.meaning}</span>
+              <span className="text-xs text-purple-600 font-medium mt-1">{item.meaning}</span>
             </div>
           ))}
         </div>
@@ -54,30 +54,30 @@ const BasicLearning = () => {
       <div className="flex w-full gap-4">
         <div className="w-1/2 flex flex-col gap-2">
           {col1.map((item) => (
-            <div 
-              key={item.number} 
+            <div
+              key={item.number}
               onClick={() => playAudio(item.reading)}
-              className={`flex justify-between items-center p-3 rounded-lg border cursor-pointer hover:border-blue-400 active:scale-95 transition-all ${item.isSpecial ? 'bg-pink-100 border-pink-200' : 'bg-white border-gray-200'}`}
+              className={`flex justify-between items-center p-3 rounded-lg border cursor-pointer hover:border-purple-400 active:scale-95 transition-all ${item.isSpecial ? 'bg-pink-100 border-pink-200' : 'bg-white border-slate-200'}`}
             >
               <span className="font-bold text-lg">{item.kanji}</span>
               <div className="flex items-center gap-2">
-                <span className="text-gray-700">{item.reading}</span>
-                <Volume2 size={16} className="text-blue-500" />
+                <span className="text-slate-700">{item.reading}</span>
+                <Volume2 size={16} className="text-purple-500" />
               </div>
             </div>
           ))}
         </div>
         <div className="w-1/2 flex flex-col gap-2">
           {col2.map((item) => (
-            <div 
-              key={item.number} 
+            <div
+              key={item.number}
               onClick={() => playAudio(item.reading)}
-              className={`flex justify-between items-center p-3 rounded-lg border cursor-pointer hover:border-blue-400 active:scale-95 transition-all ${item.isSpecial ? 'bg-pink-100 border-pink-200' : 'bg-white border-gray-200'}`}
+              className={`flex justify-between items-center p-3 rounded-lg border cursor-pointer hover:border-purple-400 active:scale-95 transition-all ${item.isSpecial ? 'bg-pink-100 border-pink-200' : 'bg-white border-slate-200'}`}
             >
               <span className="font-bold text-lg">{item.kanji}</span>
               <div className="flex items-center gap-2">
-                <span className="text-gray-700">{item.reading}</span>
-                <Volume2 size={16} className="text-blue-500" />
+                <span className="text-slate-700">{item.reading}</span>
+                <Volume2 size={16} className="text-purple-500" />
               </div>
             </div>
           ))}
