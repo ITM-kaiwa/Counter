@@ -43,10 +43,10 @@ function App() {
             href="/josuushi-hayamihyou.pdf"
             download="josuushi-hayamihyou.pdf"
             className="px-4 py-2 rounded-lg font-bold transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 flex items-center gap-1.5"
-            title="助数詞早見表(PDF)をダウンロード"
+            title="Tải bảng tra cứu cách đếm số lượng (PDF)"
           >
             <Download size={18} />
-            資料
+            Tài liệu
           </a>
         </div>
       </header>
