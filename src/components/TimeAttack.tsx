@@ -47,7 +47,7 @@ const TimeAttack = () => {
       number: conjugation.number,
       itemWord: itemObj.word,
       itemReading: itemObj.reading,
-      emoji: counter.emoji,
+      emoji: itemObj.emoji,
       correctReading: conjugation.reading,
       kanji: conjugation.kanji,
       options: options
