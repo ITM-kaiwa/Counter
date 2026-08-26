@@ -8,33 +8,33 @@ function App() {
   const [mode, setMode] = useState<'basic' | 'practice' | 'timeAttack'>('basic')
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      <header className="w-full max-w-4xl bg-white rounded-xl shadow-md p-4 mb-6 relative text-center">
-        <a 
-          href="https://itm-kaiwa.github.io/Random/index.html" 
-          target="_blank" 
+    <div className="min-h-screen bg-slate-50 flex flex-col items-center p-4">
+      <header className="w-full max-w-4xl bg-white rounded-2xl shadow-sm border border-slate-200 p-4 mb-6 relative text-center">
+        <a
+          href="https://itm-kaiwa.github.io/Random/index.html"
+          target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-4 right-4 p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-50 active:scale-95 rounded-full transition-all flex items-center justify-center"
+          className="absolute top-4 right-4 p-2 text-slate-400 hover:text-purple-500 hover:bg-purple-50 active:scale-95 rounded-full transition-all flex items-center justify-center"
           title="数字練習アプリへ"
         >
           <Link size={24} />
         </a>
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">助数詞学習アプリ</h1>
+        <h1 className="text-3xl font-bold text-slate-800 mb-4">助数詞学習アプリ</h1>
         <div className="flex justify-center gap-4">
-          <button 
-            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'basic' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+          <button
+            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'basic' ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
             onClick={() => setMode('basic')}
           >
             Học cơ bản
           </button>
-          <button 
-            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'practice' ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+          <button
+            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'practice' ? 'bg-green-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
             onClick={() => setMode('practice')}
           >
             Luyện tập
           </button>
-          <button 
-            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'timeAttack' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+          <button
+            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'timeAttack' ? 'bg-red-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
             onClick={() => setMode('timeAttack')}
           >
             Thử thách thời gian
@@ -42,7 +42,7 @@ function App() {
         </div>
       </header>
 
-      <main className="w-full max-w-4xl bg-white rounded-xl shadow-md p-6">
+      <main className="w-full max-w-4xl bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
         {mode === 'basic' && <BasicLearning />}
         {mode === 'practice' && <PracticeMode />}
         {mode === 'timeAttack' && <TimeAttack />}
