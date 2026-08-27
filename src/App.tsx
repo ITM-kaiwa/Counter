@@ -3,9 +3,10 @@ import { Link, Download } from 'lucide-react'
 import BasicLearning from './components/BasicLearning'
 import PracticeMode from './components/PracticeMode'
 import TimeAttack from './components/TimeAttack'
+import FallingGame from './components/FallingGame'
 
 function App() {
-  const [mode, setMode] = useState<'basic' | 'practice' | 'timeAttack'>('basic')
+  const [mode, setMode] = useState<'basic' | 'practice' | 'timeAttack' | 'fallingGame'>('basic')
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col items-center p-4">
@@ -39,6 +40,12 @@ function App() {
           >
             Thử thách thời gian
           </button>
+          <button
+            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'fallingGame' ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+            onClick={() => setMode('fallingGame')}
+          >
+            Game rơi
+          </button>
           <a
             href="/josuushi-hayamihyou.pdf"
             download="josuushi-hayamihyou.pdf"
@@ -55,6 +62,7 @@ function App() {
         {mode === 'basic' && <BasicLearning />}
         {mode === 'practice' && <PracticeMode />}
         {mode === 'timeAttack' && <TimeAttack />}
+        {mode === 'fallingGame' && <FallingGame />}
       </main>
     </div>
   )
