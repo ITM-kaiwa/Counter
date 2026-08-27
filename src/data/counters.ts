@@ -15,6 +15,7 @@ export interface Item {
 export interface CounterInfo {
   id: string;
   kanji: string;
+  reading: string;
   emoji: string;
   meaning: string;
   description: string;
@@ -26,6 +27,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "hon",
     kanji: "本",
+    reading: "ほん",
     emoji: "✏️",
     meaning: "Vật thon dài",
     description: "Dùng để đếm các vật dài và thon. (Ví dụ: bút, ô/dù, chuối, cây cối, v.v.)",
@@ -52,6 +54,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "ko",
     kanji: "個",
+    reading: "こ",
     emoji: "🍎",
     meaning: "Vật nhỏ",
     description: "Dùng để đếm những vật nhỏ, tròn hoặc không có hình dạng cụ thể. (Ví dụ: quả táo, quả trứng, hòn đá, v.v.)",
@@ -78,6 +81,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "hiki",
     kanji: "匹",
+    reading: "ひき",
     emoji: "🐶",
     meaning: "Động vật nhỏ, cá, côn trùng",
     description: "Dùng để đếm các loài động vật nhỏ, cá, côn trùng. (Ví dụ: chó, mèo, cá, côn trùng, v.v.)",
@@ -104,6 +108,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "mai",
     kanji: "枚",
+    reading: "まい",
     emoji: "📄",
     meaning: "Vật mỏng và phẳng",
     description: "Dùng để đếm các vật mỏng và phẳng. (Ví dụ: giấy, áo sơ mi, đĩa, v.v.)",
@@ -130,6 +135,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "nin",
     kanji: "人",
+    reading: "にん",
     emoji: "🧑",
     meaning: "Người",
     description: "Dùng để đếm người.",
@@ -156,6 +162,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "dai",
     kanji: "台",
+    reading: "だい",
     emoji: "🚗",
     meaning: "Máy móc và xe cộ",
     description: "Dùng để đếm máy móc hoặc phương tiện giao thông. (Ví dụ: ô tô, xe đạp, tivi, v.v.)",
@@ -182,6 +189,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "hai",
     kanji: "杯",
+    reading: "はい",
     emoji: "☕",
     meaning: "Đồ uống trong cốc, ly",
     description: "Dùng để đếm đồ uống được đựng trong cốc hoặc ly.",
@@ -208,6 +216,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "kai",
     kanji: "回",
+    reading: "かい",
     emoji: "🔄",
     meaning: "Số lần, tần suất",
     description: "Dùng để đếm số lần hoặc tần suất.",
@@ -234,6 +243,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "satsu",
     kanji: "冊",
+    reading: "さつ",
     emoji: "📚",
     meaning: "Sách và vở",
     description: "Dùng để đếm sách, vở và các loại giấy được đóng thành cuốn.",
@@ -260,6 +270,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "chaku",
     kanji: "着",
+    reading: "ちゃく",
     emoji: "👕",
     meaning: "Quần áo",
     description: "Dùng để đếm quần áo, trang phục.",
@@ -286,6 +297,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "soku",
     kanji: "足",
+    reading: "そく",
     emoji: "👟",
     meaning: "Giày và tất",
     description: "Dùng để đếm những thứ mang ở chân. (Một đôi tính là 1 足)",
@@ -312,6 +324,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "ken",
     kanji: "軒",
+    reading: "けん",
     emoji: "🏠",
     meaning: "Ngôi nhà",
     description: "Dùng để đếm nhà cửa hoặc các tòa nhà.",
@@ -338,6 +351,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "tsu",
     kanji: "つ",
+    reading: "つ",
     emoji: "🍎",
     meaning: "Vật nói chung (đếm kiểu Nhật)",
     description: "Dùng để đếm đồ vật nói chung khi không có助数詞 riêng phù hợp. (Ví dụ: táo, quýt, chìa khóa, v.v.)",
@@ -364,6 +378,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "ban",
     kanji: "番",
+    reading: "ばん",
     emoji: "🔢",
     meaning: "Thứ tự, số hiệu",
     description: "Dùng để đếm thứ tự hoặc số hiệu. (Ví dụ: câu hỏi, chỗ ngồi, cổng, v.v.)",
@@ -390,6 +405,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "sai",
     kanji: "歳",
+    reading: "さい",
     emoji: "🎂",
     meaning: "Tuổi",
     description: "Dùng để đếm tuổi của người hoặc động vật.",
@@ -416,6 +432,7 @@ export const countersData: CounterInfo[] = [
   {
     id: "floor",
     kanji: "階",
+    reading: "かい",
     emoji: "🏢",
     meaning: "Tầng của tòa nhà",
     description: "Dùng để đếm số tầng của tòa nhà. (Ví dụ: trung tâm thương mại, bệnh viện, chung cư, v.v.)",
