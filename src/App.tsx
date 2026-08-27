@@ -22,27 +22,27 @@ function App() {
         </a>
         <h1 className="text-3xl font-bold text-slate-800 mb-1">Ứng dụng học Trợ từ đếm</h1>
         <p className="text-sm text-slate-400 mb-3">助数詞学習アプリ</p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
           <button
-            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'basic' ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+            className={`px-3 sm:px-4 py-2 text-sm sm:text-base rounded-lg font-bold transition-colors ${mode === 'basic' ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
             onClick={() => setMode('basic')}
           >
             Học cơ bản
           </button>
           <button
-            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'practice' ? 'bg-green-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+            className={`px-3 sm:px-4 py-2 text-sm sm:text-base rounded-lg font-bold transition-colors ${mode === 'practice' ? 'bg-green-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
             onClick={() => setMode('practice')}
           >
             Luyện tập
           </button>
           <button
-            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'timeAttack' ? 'bg-red-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+            className={`px-3 sm:px-4 py-2 text-sm sm:text-base rounded-lg font-bold transition-colors ${mode === 'timeAttack' ? 'bg-red-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
             onClick={() => setMode('timeAttack')}
           >
             Thử thách thời gian
           </button>
           <button
-            className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'fallingGame' ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+            className={`px-3 sm:px-4 py-2 text-sm sm:text-base rounded-lg font-bold transition-colors ${mode === 'fallingGame' ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
             onClick={() => setMode('fallingGame')}
           >
             Game rơi
@@ -50,7 +50,7 @@ function App() {
           <a
             href="/josuushi-hayamihyou.pdf"
             download="josuushi-hayamihyou.pdf"
-            className="px-4 py-2 rounded-lg font-bold transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 flex items-center gap-1.5"
+            className="px-3 sm:px-4 py-2 text-sm sm:text-base rounded-lg font-bold transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 flex items-center gap-1.5"
             title="Tải bảng tra cứu cách đếm số lượng (PDF)"
           >
             <Download size={18} />
