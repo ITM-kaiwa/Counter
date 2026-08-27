@@ -20,7 +20,8 @@ function App() {
         >
           <Link size={24} />
         </a>
-        <h1 className="text-3xl font-bold text-slate-800 mb-4">助数詞学習アプリ</h1>
+        <h1 className="text-3xl font-bold text-slate-800 mb-1">Ứng dụng học Trợ từ đếm</h1>
+        <p className="text-sm text-slate-400 mb-3">助数詞学習アプリ</p>
         <div className="flex justify-center gap-4">
           <button
             className={`px-4 py-2 rounded-lg font-bold transition-colors ${mode === 'basic' ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
