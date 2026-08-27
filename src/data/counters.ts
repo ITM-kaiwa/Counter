@@ -250,7 +250,7 @@ export const countersData: CounterInfo[] = [
     items: [
       { word: "本", reading: "ほん", emoji: "📖", meaning: "sách" },
       { word: "ノート", reading: "のーと", emoji: "📓", meaning: "vở" },
-      { word: "雑誌", reading: "ざっし", emoji: "📰", meaning: "tạp chí" },
+      { word: "雑誌", reading: "ざっし", emoji: "📙", meaning: "tạp chí" },
       { word: "辞書", reading: "じしょ", emoji: "📕", meaning: "từ điển" },
       { word: "教科書", reading: "きょうかしょ", emoji: "📘", meaning: "sách giáo khoa" }
     ],
@@ -381,13 +381,12 @@ export const countersData: CounterInfo[] = [
     reading: "ばん",
     emoji: "🔢",
     meaning: "Thứ tự, số hiệu",
-    description: "Dùng để đếm thứ tự hoặc số hiệu. (Ví dụ: câu hỏi, chỗ ngồi, cổng, v.v.)",
+    description: "Dùng để đếm thứ tự hoặc số hiệu. (Ví dụ: câu hỏi, số xổ số, cổng, v.v.)",
     items: [
       { word: "もんだい", reading: "もんだい", emoji: "📝", meaning: "câu hỏi" },
-      { word: "せき", reading: "せき", emoji: "💺", meaning: "chỗ ngồi" },
+      { word: "くじ", reading: "くじ", emoji: "🎲", meaning: "số xổ số" },
       { word: "ホーム", reading: "ほーむ", emoji: "🚉", meaning: "sân ga" },
-      { word: "ゲート", reading: "げーと", emoji: "🚪", meaning: "cổng" },
-      { word: "まどぐち", reading: "まどぐち", emoji: "🪟", meaning: "quầy giao dịch" }
+      { word: "ゲート", reading: "げーと", emoji: "🚪", meaning: "cổng" }
     ],
     conjugations: [
       { number: 1, kanji: "1番", reading: "いちばん", isSpecial: false },
@@ -412,8 +411,6 @@ export const countersData: CounterInfo[] = [
     items: [
       { word: "子供", reading: "こども", emoji: "👶", meaning: "trẻ em" },
       { word: "赤ちゃん", reading: "あかちゃん", emoji: "🍼", meaning: "em bé" },
-      { word: "おじいさん", reading: "おじいさん", emoji: "👴", meaning: "ông" },
-      { word: "おばあさん", reading: "おばあさん", emoji: "👵", meaning: "bà" },
       { word: "犬", reading: "いぬ", emoji: "🐶", meaning: "con chó" }
     ],
     conjugations: [
