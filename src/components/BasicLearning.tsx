@@ -27,7 +27,12 @@ const BasicLearning = () => {
         </button>
         <div className="text-center">
           <div className="text-6xl mb-2">{counter.emoji}</div>
-          <h2 className="text-4xl font-bold mb-2">〜{counter.kanji}</h2>
+          <h2 className="text-4xl font-bold mb-2 flex items-baseline justify-center gap-1.5">
+            <span>〜{counter.kanji}</span>
+            {counter.reading !== counter.kanji && (
+              <span className="text-lg font-normal text-slate-500">{counter.reading}</span>
+            )}
+          </h2>
           <p className="text-slate-600 font-medium">{counter.meaning}</p>
         </div>
         <button onClick={handleNext} className="p-2 bg-slate-100 rounded-full hover:bg-slate-200 active:scale-90 transition-transform">

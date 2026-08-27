@@ -22,6 +22,10 @@ const ALL_ITEMS: ItemWithCounter[] = countersData.flatMap((counter) =>
   counter.items.map((item) => ({ item, counter }))
 );
 
+const KANJI_TO_READING: Record<string, string> = Object.fromEntries(
+  countersData.map((c) => [c.kanji, c.reading])
+);
+
 interface RoundData {
   mode: Mode;
   counter: CounterInfo;
@@ -257,14 +261,24 @@ const FallingGame = () => {
             {modeLabel}
           </p>
           <div
-            className="absolute flex h-16 w-16 select-none items-center justify-center rounded-xl border border-purple-200 bg-white text-3xl shadow"
+            className="absolute flex h-16 w-16 select-none items-center justify-center rounded-xl border border-purple-200 bg-white shadow"
             style={{
               top: `${fallTop}%`,
               left: `calc(50% - 2rem + ${fallLeft}px)`,
               transition: phase === 'falling' ? 'none' : 'top 0.2s ease-out',
             }}
           >
-            {roundData.promptDisplay}
+            {roundData.mode === 'counterToPicture' &&
+            KANJI_TO_READING[roundData.promptDisplay] !== roundData.promptDisplay ? (
+              <ruby className="text-3xl leading-none">
+                {roundData.promptDisplay}
+                <rt className="text-sm font-bold text-purple-600">
+                  {KANJI_TO_READING[roundData.promptDisplay]}
+                </rt>
+              </ruby>
+            ) : (
+              <span className="text-3xl">{roundData.promptDisplay}</span>
+            )}
           </div>
           {/* Catch line marker */}
           <div className="absolute bottom-6 left-2 right-2 border-t-2 border-dashed border-purple-300" />
@@ -282,9 +296,16 @@ const FallingGame = () => {
                 type="button"
                 disabled={phase !== 'falling'}
                 onClick={() => handleCatch(candidate)}
-                className="flex h-16 items-center justify-center rounded-xl border border-slate-200 bg-white text-2xl shadow-sm transition-all hover:border-purple-300 hover:bg-purple-50 active:scale-95 disabled:opacity-60"
+                className="flex h-16 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:border-purple-300 hover:bg-purple-50 active:scale-95 disabled:opacity-60"
               >
-                {candidate}
+                {roundData.mode === 'pictureToCounter' && KANJI_TO_READING[candidate] !== candidate ? (
+                  <ruby className="text-2xl leading-none">
+                    {candidate}
+                    <rt className="text-sm font-bold text-purple-600">{KANJI_TO_READING[candidate]}</rt>
+                  </ruby>
+                ) : (
+                  <span className="text-2xl">{candidate}</span>
+                )}
               </button>
             ))}
           </div>
@@ -302,7 +323,17 @@ const FallingGame = () => {
                 <p className="font-bold">
                   Chính xác! {result.matchedItem.emoji} {result.matchedItem.word}（
                   {result.matchedItem.meaning}） →{' '}
-                  <span className="text-base">〜{result.counter.kanji}</span>
+                  <span className="text-base">
+                    〜
+                    {result.counter.reading !== result.counter.kanji ? (
+                      <ruby>
+                        {result.counter.kanji}
+                        <rt className="text-xs font-bold text-purple-600">{result.counter.reading}</rt>
+                      </ruby>
+                    ) : (
+                      result.counter.kanji
+                    )}
+                  </span>
                 </p>
               )}
               {!result.timedOut && !result.success && (

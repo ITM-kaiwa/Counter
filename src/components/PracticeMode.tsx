@@ -31,7 +31,12 @@ const PracticeMode = () => {
         </button>
         <div className="text-center">
           <div className="text-4xl mb-2">{counter.emoji}</div>
-          <h2 className="text-3xl font-bold mb-2">Luyện tập: 〜{counter.kanji}</h2>
+          <h2 className="text-3xl font-bold mb-2 flex items-baseline justify-center gap-1.5">
+            <span>Luyện tập: 〜{counter.kanji}</span>
+            {counter.reading !== counter.kanji && (
+              <span className="text-base font-normal text-slate-500">{counter.reading}</span>
+            )}
+          </h2>
           <p className="text-slate-500">Hãy nhập cách đọc bằng Hiragana</p>
         </div>
         <button onClick={handleNext} className="p-2 bg-slate-100 rounded-full hover:bg-slate-200">
