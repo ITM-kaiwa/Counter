@@ -44,28 +44,28 @@ const PracticeMode = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-2 gap-x-8 gap-y-4 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 w-full">
         {counter.conjugations.map((item) => {
           const isCorrect = inputs[item.number] === item.reading;
           const hasInput = (inputs[item.number] || '').length > 0;
 
           return (
-            <div key={item.number} className="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg shadow-sm">
-              <span className="font-bold text-xl w-12">{item.number}{counter.kanji}</span>
+            <div key={item.number} className="flex items-center gap-2 sm:gap-3 p-3 bg-white border border-slate-200 rounded-lg shadow-sm">
+              <span className="font-bold text-xl w-10 sm:w-12 shrink-0">{item.number}{counter.kanji}</span>
               <input
                 type="text"
                 value={inputs[item.number] || ''}
                 onChange={(e) => handleChange(item.number, e.target.value)}
                 placeholder="cách đọc"
-                className={`flex-1 p-2 border rounded-md outline-none focus:ring-2 focus:ring-purple-400 ${hasInput ? (isCorrect ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300') : ''}`}
+                className={`min-w-0 flex-1 p-2 border rounded-md outline-none focus:ring-2 focus:ring-purple-400 ${hasInput ? (isCorrect ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300') : ''}`}
               />
-              <div className="w-8 flex justify-center">
+              <div className="w-6 sm:w-8 flex justify-center shrink-0">
                 {hasInput && isCorrect && <Check className="text-green-500" size={24} />}
                 {hasInput && !isCorrect && <X className="text-red-500" size={24} />}
               </div>
               <button
                 onClick={() => playAudio(item.reading)}
-                className="p-2 text-slate-400 hover:text-purple-500 hover:bg-purple-50 active:scale-90 rounded-full transition-all"
+                className="p-2 text-slate-400 hover:text-purple-500 hover:bg-purple-50 active:scale-90 rounded-full transition-all shrink-0"
                 title="Phát âm thanh"
               >
                 <Volume2 size={20} />
